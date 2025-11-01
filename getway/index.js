@@ -7,10 +7,10 @@ const app=express();
 
 app.use(express.json())
 app.use(cors())
-app.use('/customer',proxy('http://localhost:5696'))
-app.use('/',proxy('http://localhost:5697'))
-app.use('/shopping',proxy('http://localhost:5698'))
+app.use('/customer',proxy('http://127.0.0.1:5696'))
+app.use('/shopping',proxy('http://127.0.0.1:5698'))
+app.use('/',proxy('http://127.0.0.1:5699'))
 
-app.listen(5600,()=>{
-    console.log('Getway Service is Running on 5600....')
+app.listen(5600, '0.0.0.0', ()=>{
+    console.log('Gateway Service is Running on port 5600....')
 })
